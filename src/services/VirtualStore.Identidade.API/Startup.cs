@@ -33,17 +33,13 @@ namespace VirtualStore.Identidade.API
             services.AddIdentityConfiguration(Configuration);
 
             services.AddApiConfiguration();
-            
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "VirtualStore.Identidade.API", Version = "v1" });
-            });
+
+            services.AddSwaggerConfiguration();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VirtualStore.Identidade.API v1"));
+            app.UseSwaggerConfiguration();
 
             app.UseApiConfiguration(env);
         }
