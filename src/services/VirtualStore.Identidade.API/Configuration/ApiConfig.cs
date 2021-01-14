@@ -25,7 +25,7 @@ namespace VirtualStore.Identidade.API.Configuration
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseIdentityConfiguration();
 
             app.UseEndpoints(endpoints =>
             {

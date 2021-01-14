@@ -30,6 +30,8 @@ namespace VirtualStore.Identidade.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentityConfiguration(Configuration);
+
             services.AddApiConfiguration();
             
             services.AddSwaggerGen(c =>
