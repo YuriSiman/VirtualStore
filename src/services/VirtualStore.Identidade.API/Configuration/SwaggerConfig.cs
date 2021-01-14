@@ -14,7 +14,14 @@ namespace VirtualStore.Identidade.API.Configuration
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "VirtualStore.Identidade.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                    Title = "VirtualStore.Identidade.API",
+                    Version = "v1",
+                    Description = "API de Identidade para autenticação de usuários da aplicação VirtualStore",
+                    Contact = new OpenApiContact() { Name = "Yuri Siman", Email = "yurisimannogueira@gmail.com"},
+                    License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
+                });
             });
 
             return services;
